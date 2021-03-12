@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   end
 
   def index
+    @users = User.all
+    @user = User.new
   end
 
   def show
