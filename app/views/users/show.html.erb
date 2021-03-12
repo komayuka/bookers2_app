@@ -1,0 +1,25 @@
+<% @users.each do |user| %>
+
+<body>
+ <div>
+     <h2>User info</h2>
+  <tbody>
+      <tr>
+       <th>name</th>
+      </tr>
+      <tr>
+       <th>introduction</th>
+      </tr>
+  </tbody>
+
+
+</div>
+</body>
+
+<h1>New book</h1>
+<%= form_with model: @user, url:'/users', local:true do |f| %>
+
+<div class="field">
+ <%= f.label :title %><br/>
+ <%= f.text_field :title %>
+</div>
