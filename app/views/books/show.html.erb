@@ -1,1 +1,18 @@
 <h2>Book detail</h2>
+
+
+<table>
+  <tr>
+    <td>
+      <%= link_to 'edit', edit_book_path(book) %>
+    </td>
+    <td>
+      <%= link_to 'destroy', book, method: :delete, data: {confilm: "本当に削除しますか?" } %>
+    </td>
+  </tr>
+</table>
+
+
+
+
+
