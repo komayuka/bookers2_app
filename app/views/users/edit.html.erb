@@ -1,1 +1,17 @@
 <h2>User info</h2>
+<div class="field">
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+</div>
+
+<div class="field">
+  <%= f.label :image %>
+  <%= file_field_tag "upload" %><p>選択されていません</p>
+</div>
+<div class="field">
+    <%= f.label :introduction %><br />
+    <%= f.text_field :introduction %>
+</div>
+<div>
+  <%= f.submit 'Update User' %>
+</div>

@@ -12,13 +12,13 @@
   <body>
     <% if user_signed_in? %>
       <li class="nav-item">
-        <%= link_to "Home", destroy_user_session_path, method: :delete %>
+        <%= link_to "Home", '/users/show' %>
       </li>
       <li class="nav-item">
-        <%= link_to "Users", destroy_user_session_path, method: :delete %>
+        <%= link_to "Users", '/users/index' %>
       </li>
       <li class="nav-item">
-        <%= link_to "Books", destroy_user_session_path, method: :delete %>
+        <%= link_to "Books", 'books/index' %>
       </li>
       <li class="nav-item">
         <%= link_to "logout", destroy_user_session_path, method: :delete %>
