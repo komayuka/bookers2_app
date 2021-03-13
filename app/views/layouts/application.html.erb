@@ -11,14 +11,30 @@
 
   <body>
     <% if user_signed_in? %>
-      <li>
+      <li class="nav-item">
+        <%= link_to "Home", destroy_user_session_path, method: :delete %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Users", destroy_user_session_path, method: :delete %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Books", destroy_user_session_path, method: :delete %>
+      </li>
+      <li class="nav-item">
         <%= link_to "logout", destroy_user_session_path, method: :delete %>
       </li>
+
     <% else %>
-      <li>
+      <li class="nav-item">
+        <%= link_to "Home", new_user_registration_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "About", new_user_registration_path %>
+      </li>
+      <li class="nav-item">
         <%= link_to "Sign up", new_user_registration_path %>
       </li>
-      <li>
+      <li class="nav-item">
         <%= link_to "Log in", new_user_session_path %>
       </li>
     <% end %>
