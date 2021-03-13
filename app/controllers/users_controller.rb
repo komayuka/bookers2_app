@@ -16,6 +16,10 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
+    if current_user == @user
+      flash[:succces] = 'You have updated user successfully'
+
   end
 
   def destroy
