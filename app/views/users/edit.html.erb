@@ -1,18 +1,22 @@
 <h2>User info</h2>
+<%= form_with model: @user, local:true do |f| %>
+
 <div class="field">
-  <%= f.label :name %><br />
-  <%= f.text_field :name %>
-  <%= current_user.name %>
+   <%= f.label :name %><br />
+   <%= f.text_field :name  %>
 </div>
 
 <div class="field">
-  <%= f.label :image %>
-  <%= file_field_tag "upload" %><p>選択されていません</p>
+    <%= f.label :image %><br />
+    <%= file_field_tag "upload" %>
+
 </div>
+
 <div class="field">
     <%= f.label :introduction %><br />
-    <%= f.text_field :introduction %>
+    <%= f.text_area :body %>
 </div>
 <div>
   <%= f.submit 'Update User' %>
 </div>
+<% end %>

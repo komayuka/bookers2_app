@@ -12,13 +12,14 @@ class BooksController < ApplicationController
   end
 
   def edit
-    @book = Book.all
+    @book = Book.find(params[:id])
+    redirect_to books_path
   end
 
   def destroy
     book = Book.find(params[:id])
     book.destroy
-     redireck_to books_path
+    redirect_to books_path
   end
 
   private
