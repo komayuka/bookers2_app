@@ -11,7 +11,9 @@
       <tr>
        <th>introduction</th>
       </tr>
-      <%= link_to "edit", edit_users_path %>
+       <th><%= link_to "edit", edit_user_path(user.id) %>
+       <span class="fas fa-user-cog"></span></th>
+       </tr>
   </tbody>
 
 
