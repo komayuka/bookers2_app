@@ -1,4 +1,4 @@
-<% @users.each do |user| %>
+<% @user.each do |users| %>
 
 <body>
  <div>
@@ -9,10 +9,11 @@
         <%= current_user.name %>
       </tr>
       <tr>
-       <th>introduction</th>
+       <p>introduction</p>
       </tr>
-       <th><%= link_to "edit", edit_user_path(user.id) %>
-       <span class="fas fa-user-cog"></span></th>
+       <%= link_to ("edit", "edit_user_path") do %>
+        <span class="fas fa-user-cog"></span>
+        <% end %>
        </tr>
   </tbody>
 
@@ -23,7 +24,7 @@
 <% end %>
 
 <h2>New book</h2>
-<%= form_with model: @user, local:true do |f| %>
+<%= form_with model: @users, local:true do |f| %>
 
 </div>
 <div class="field">
