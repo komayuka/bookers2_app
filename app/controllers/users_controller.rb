@@ -19,7 +19,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if current_user == @user
       flash[:succces] = 'You have updated user successfully'
-
+      render :index
+    end
   end
 
   def destroy
