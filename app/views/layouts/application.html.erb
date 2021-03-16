@@ -11,40 +11,24 @@
 
   <body>
     <% if user_signed_in? %>
-      <li class="nav-item">
-        <i class="fas fa-home"></i>
+        <span class="fas fa-home"></span>
         <%= link_to "Home", root_path %>
-      </li>
-      <li class="nav-item">
          <span class="fas fa-users"></span>
         <%= link_to "Users", '/users/index' %>
-      </li>
-      <li class="nav-item">
         <span class="fas fa-book-open"></span>
         <%= link_to "Books", 'books/index' %>
-      </li>
-      <li class="nav-item">
         <span class="fas fa-sign-out-alt"></span>
         <%= link_to "logout", destroy_user_session_path, method: :delete %>
-      </li>
 
     <% else %>
-      <li class="nav-item">
         <span class="fas fa-home"></span>
         <%= link_to "Home", new_user_registration_path %>
-      </li>
-      <li class="nav-item">
         <span class="fas fa-link"></span>
         <%= link_to "About", new_user_registration_path %>
-      </li>
-      <li class="nav-item">
         <span class="fas fa-user-plus"></span>
         <%= link_to "Sign up", new_user_registration_path %>
-      </li>
-      <li class="nav-item">
          <span class="fas fa-sign-in-alt"></span>
         <%= link_to "Log in", new_user_session_path %>
-      </li>
     <% end %>
     <%= yield %>
   </body>
