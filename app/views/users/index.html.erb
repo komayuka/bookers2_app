@@ -11,9 +11,10 @@
       <tr>
        <p>introduction</p>
       </tr>
-       <%= link_to ("edit", "edit_user_path") do %>
-        <span class="fas fa-user-cog"></span>
-        <% end %>
+       <th><%= link_to edit_user_path(current_user.id), method: :get do %>
+       <i class="fas fa-user-cog"></i>
+       <% end %>
+       </th>
        </tr>
   </tbody>
 

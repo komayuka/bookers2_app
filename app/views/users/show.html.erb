@@ -1,17 +1,20 @@
 <body>
  <div>
-     <h2>User info</h2>
+ <h2>User info</h2>
   <tbody>
+     <p><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback:"no_image.jpg" %></p>
       <tr>
        <th>name</th>
        <%= current_user.name %>
       </tr>
       <tr>
-       <th>introduction</th>
+       <p>introduction</p>
       </tr>
       <tr>
-       <th><%= link_to "edit", edit_user_path(user.id) %>
-       <span class="fas fa-user-cog"></span></th>
+       <th><%= link_to edit_user_path(current_user.id), method: :get do %>
+       <i class="fas fa-user-cog"></i>
+       <% end %>
+       </th>
        </tr>
   </tbody>
 
