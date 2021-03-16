@@ -4,10 +4,11 @@
   <tbody>
       <tr>
        <th>name</th>
-        <%= current_user.name %>
+       <th><%= current_user.name %></th>
       </tr>
       <tr>
-       <p>introduction</p>
+       <th>introduction</th>
+       <th><%= current_user.introduction %></th>
       </tr>
        <th><%= link_to edit_user_path(current_user.id), method: :get do %>
        <i class="fas fa-user-cog"></i>
@@ -27,7 +28,7 @@
  <%= f.text_field :title %>
 <div class="field">
  <%= f.label :opinion %><br />
- <%= f.text_area :body %>
+ <%= f.text_area :opinion %>
 </div>
 <div>
  <%= f.submit 'Create Book' %>
