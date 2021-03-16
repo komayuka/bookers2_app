@@ -10,12 +10,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:id])
-     if @user.save
-       redirect_to book_path(@books), notice: 'You have created book successfully'
-     else
-       render :show
-     end
+   
   end
 
   def edit
