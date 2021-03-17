@@ -27,14 +27,14 @@
 </body>
 
 <h2>New book</h2>
-<%= form_with model: @book, local:true do |f| %>
+<%= form_with model: @books, local:true do |f| %>
 
 <div class="field">
  <%= f.label :title %><br />
  <%= f.text_field :title %>
 </div>
 <div class="field">
- <%= f.label :body %><br />
+ <%= f.label :opinion %><br />
  <%= f.text_area :body %>
 </div>
 <div>
@@ -52,4 +52,15 @@
   </tr>
  </thead>
 </table>
-
+<div class="list-wrap">
+    <% @book.each do |book| %>
+    <div class="list-comment">
+      <tr>
+        <td class="list-title"><%= book.title %></td>
+        <td class="list-opinion"><%= book.body %></td>
+      </tr>
+    </div>
+  </div>
+  </tbody>
+</table>
+<% end %>
