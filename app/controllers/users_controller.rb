@@ -10,7 +10,13 @@ class UsersController < ApplicationController
   end
 
   def create
-   
+    @user = User.new(user_params)
+    @user.image = "no_image.jpeg"
+     if @user.save
+       redirect_to pasts_path, notice: 'You have update user successfully'
+     else
+       render :show
+     end
   end
 
   def edit
