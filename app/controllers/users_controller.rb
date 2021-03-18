@@ -2,13 +2,13 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @user = User.all
+    @users = User.all.includes(:books)
     @book = Book.new
   end
 
   def show
     @user = User.find(params[:id])
-    @book = Book.all
+    @books = @user.books
   end
 
   def edit
