@@ -1,22 +1,26 @@
+
+
 <%= render 'layouts/sidelist' %>
 <h2>Books</h2>
 <table>
  <thead>
   <tr>
-   <th>Title</th>
-   <th>Opinion</th>
+    <th></th>
+    <th>Title</th>
+    <th>Opinion</th>
   </tr>
  </thead>
-</table>
-<div class="list-wrap">
-    <% @books.each do |book| %>
-    <div class="list-comment">
+
+<tbody>
+    <% @book_data.each do |book| %>
       <tr>
-        <td class="list-title"><%= book.title %></td>
-        <td class="list-opinion"><%= book.body %></td>
+        <td><% link_to user_path(book.user.id) do %>
+        <%= attachment_image_tag book.user, :profile_image, size: '40x40', class:"attachment user profile_image fallback" %>
+        </td>
+        <% end %>
+        <td><%= link_to book_path(book) ,class: "book_" + "#{book.id}" do %><%= book.title %><% end %></td>
+        <td><%= book.body %></td>
       </tr>
-    </div>
-  </div>
+      <% end %>
   </tbody>
 </table>
-<% end %>
