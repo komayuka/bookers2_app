@@ -18,7 +18,7 @@ class BooksController < ApplicationController
        redirect_to book_path(@book.id)
      else
        @users = User.all
-       render temlate: 'users/index'
+       render template: 'users/index'
      end
   end
 
