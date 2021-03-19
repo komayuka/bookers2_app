@@ -30,6 +30,9 @@
          <span class="fas fa-sign-in-alt"></span>
         <%= link_to "Log in", new_user_session_path %>
     <% end %>
+    <% flash.each do |message_type, message| %>
+    <%= content_tag :div, message, class: message_type %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
