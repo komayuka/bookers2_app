@@ -1,31 +1,14 @@
 <%= render 'layouts/sidelist' %>
 <h2>Book detail</h2>
-
-<body>
-  <p>
-    <strong>Title</strong>
-    <td class="list-title"><%= @book.title %></td>
-  </p>
-  <p>
-    <strong>Opinion</strong>
-    <td class="list-body"><%= @book.body %></td>
-  </p>
-  </body>
-
-  <tbody>
-    <div class="list-wrap">
-    <div class="list-comment">
-    </div>
-  </div>
-  </tbody>
-
-  <table>
-    <td><%= link_to 'edit', edit_book_path(@book) %>
-    </td>
-    <td>
-      <%= link_to 'destroy', @book, method: :delete, data: {confilm: "本当に削除しますか?" } %>
-    </td>
+<table>
+<tbody>
+  <tr>
+  <td><%= link_to book_path(@book), class: "book_" + "#{book.id}" do %><%= @book.title %><% end %></td>
+  <td><%= @book.body %></td>
+  <td><%= link_to 'edit', edit_book_path(@book) %></td>
+  <td><%= link_to 'destroy', @book, method: :delete, data: {confilm: "本当に削除しますか?" } %></td>
   </tr>
+  </tbody>
 </table>
 
 
