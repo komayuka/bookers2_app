@@ -1,7 +1,7 @@
 
 <%= render 'layouts/sidelist', book:@book_new %>
 <h2>Book detail</h2>
-<table>
+<table class="table table-hover">
 <tbody>
   <tr>
    <td><%= attachment_image_tag @book.user, :profile_image, size: '40x40', class:"attachment user profile_image fallback" %></td>
