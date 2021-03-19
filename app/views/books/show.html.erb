@@ -1,13 +1,15 @@
+
 <%= render 'layouts/sidelist', book:@book_new %>
 <h2>Book detail</h2>
 <table>
 <tbody>
   <tr>
-   <td><%= attachment_image_tag book.user, :profile_image, size: '40x40', class:"attachment user profile_image fallback" %></td>
+   <td><%= attachment_image_tag @book.user, :profile_image, size: '40x40', class:"attachment user profile_image fallback" %></td>
    <td><%= link_to book_path(@book), class: "book_" + "#{@book.id}" do %><%= @book.title %><% end %></td>
    <td><%= @book.body %></td>
    <td><%= link_to 'edit', edit_book_path(@book) %></td>
-   <td><%= link_to 'destroy', @book, method: :delete, data: {confilm: "本当に削除しますか?" } %></td>
+   <td><%= link_to 'destroy', @book,  method: :delete, data: {confirm: "本当に削除しますか？"} %></td>
+
   </tr>
   </tbody>
 </table>
