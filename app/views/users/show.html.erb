@@ -1,5 +1,4 @@
 
-
 <%= render 'layouts/sidelist', book:@book_new %>
 <h2>Books</h2>
 <table>
@@ -18,7 +17,7 @@
         <%= attachment_image_tag book.user, :profile_image, size: '40x40', class:"attachment user profile_image fallback" %>
         </td>
         <% end %>
-        <td><%= link_to book_path(book) ,class: "book_" + "#{book.id}" do %><%= book.title %><% end %></td>
+        <td><%= link_to book_path(book.id) ,class: "book_" + "#{book.id}" do %><%= book.title %><% end %></td>
         <td><%= book.body %></td>
       </tr>
       <% end %>
