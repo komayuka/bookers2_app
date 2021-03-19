@@ -21,7 +21,7 @@
        <div class="row">
        <th><%= link_to edit_user_path(current_user.id), method: :get do %>
        </div>
-       <i class="fas fa-user-cog"></i>
+       <button type="button" class="btn btn-outline-secondary btn-lg btn-block"><i class="fas fa-user-cog"></i></button>
        <% end %>
        </th>
 
@@ -38,6 +38,6 @@
  <%= f.text_area :body %>
 </div>
 <div>
- <%= f.submit 'Create Book' %>
+ <%= f.submit 'Create Book', class: "btn btn-success text-light" %>
 </div>
 <% end %>
