@@ -54,10 +54,10 @@
     <main>
     <div class="d-flex flex-row">
       <div class="container px-5 px-sm-0">
-      <div class="row">
-      <% flash.each do |message_type, message| %>
+        <% flash.each do |message_type, message| %>
         <%= content_tag :div, message, class: message_type %>
       <% end %>
+    <div class="row">
 
       <%= yield %>
     </div>
