@@ -1,3 +1,6 @@
+<div class="container">
+<div class="row">
+ <div class="col-md-3">
 <h2>User info</h2>
   <tbody>
      <% if current_user.profile_image == nil %>
@@ -21,7 +24,7 @@
        <div class="row">
        <th><%= link_to edit_user_path(current_user.id), method: :get do %>
        </div>
-       <i class="fas fa-user-cog"></i>
+       <button type="button" class="btn btn-outline-secondary btn-sm btn-block"><i class="fas fa-user-cog"></i></button>
        <% end %>
        </th>
 
@@ -38,6 +41,9 @@
  <%= f.text_area :body %>
 </div>
 <div>
- <%= f.submit 'Create Book' %>
+ <%= f.submit 'Create Book', class: "btn btn-success text-light" %>
+</div>
+</div>
+</div>
 </div>
 <% end %>
