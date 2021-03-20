@@ -10,7 +10,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="d-flex flex-column vh-100">
+  <body class="vh-100">
     <header class="shadow-sm">
     <nav class="navbar navbar-expand-lg navbar-light navbar-dark bg-dark">
     <div class="container">
@@ -50,10 +50,20 @@
     </div>
     </nav>
     </header>
-    <% flash.each do |message_type, message| %>
-    <%= content_tag :div, message, class: message_type %>
-    <% end %>
-    <%= yield %>
+
+    <main>
+    <div class="d-flex flex-row">
+      <div class="container px-5 px-sm-0">
+      <div class="row">
+      <% flash.each do |message_type, message| %>
+        <%= content_tag :div, message, class: message_type %>
+      <% end %>
+
+      <%= yield %>
+    </div>
+    </div>
+    </div>
+    </main>
 
     <footer>
       <div class="container mt-5">
