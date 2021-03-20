@@ -1,20 +1,22 @@
-<h2>Editing Book</h2>
+
+<div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+<h1>Editing Book</h1>
 <%= form_with model:@book, local:true do |f| %>
 
 <div class="field">
   <%= f.label :title %>
-  <%= f.text_field :title %>
+  <p><%= f.text_field :title %></p>
 </div>
 <div class="field">
   <%= f.label :opinion %>
-  <%= f.text_field :body %>
+  <p><%= f.text_field :body %></p>
 </div>
 <div>
-  <%= f.submit 'Update Book' %>
+  <%= f.submit 'Update Book', class: "btn btn-success text-light" %>
 </div>
 <% end %>
 
 <%= link_to "show", book_path(@book) %>
 |
 <%= link_to "Back", books_path %>
-
+</div>
