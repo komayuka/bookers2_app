@@ -26,7 +26,7 @@ class UsersController < ApplicationController
        redirect_to user_path(@user.id)
     else
       flash.now[:danger] = "error"
-      rendre :edit
+      render :edit
     end
   end
 
