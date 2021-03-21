@@ -39,8 +39,7 @@ class BooksController < ApplicationController
       flash[:notice] = "You have updated book successfully."
       redirect_to book_path(@book)
     else
-      flash.now[:danger] = "error"
-      render action: :edit
+      render :edit
     end
   end
 
