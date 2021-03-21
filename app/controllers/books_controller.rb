@@ -16,14 +16,13 @@ class BooksController < ApplicationController
      @book = current_user.books.new(book_params)
      @book.user_id = current_user.id
      @book_new = Book.new
-     @books = Book.all
      if @book.save
        flash[:notice] = "You have created book successfully."
        redirect_to book_path(@book.id)
      else
-       @users = User.all
+       @books = Book.all
        flash.now[:danger] = "error"
-       render template: 'books/index'
+         render "index"
      end
   end
 
