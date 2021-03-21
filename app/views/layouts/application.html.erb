@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookers2</title>
+    <title>Bookers</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -14,7 +14,7 @@
     <header class="shadow-sm">
     <nav class="navbar navbar-expand-lg navbar-light navbar-dark bg-dark">
     <div class="container">
-        <%= link_to "bookers", root_path, class: "text-light navbar-brand p-3" %>
+        <%= link_to "Bookers", root_path, class: "text-light navbar-brand p-3" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -39,11 +39,11 @@
         <li>
         <%= link_to "Home", root_path, class: "nav-link text-light fas fa-home" %></li>
         <li>
-        <%= link_to "About", homes_about_path, class: "nav-link text-light fas fa-link" %></li>
+        <%= link_to "About", home_about_path, class: "nav-link text-light fas fa-link" %></li>
         <li>
-        <%= link_to "Sign up", new_user_registration_path, class: "nav-link text-light fas fa-user-plus" %></li>
+        <%= link_to "sign up", new_user_registration_path, class: "nav-link text-light fas fa-user-plus" %></li>
          <li>
-        <%= link_to "Log in", new_user_session_path,  class: "nav-link text-light fas fa-sign-in-alt" %></li>
+        <%= link_to "login", new_user_session_path,  class: "nav-link text-light fas fa-sign-in-alt" %></li>
     <% end %>
     </ul>
     </div>
