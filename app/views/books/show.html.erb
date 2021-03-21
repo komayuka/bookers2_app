@@ -2,14 +2,14 @@
 <%= render 'layouts/sidelist', book:@book_new, user:@book.user %>
 
 <div class="col-md-8 offset-md-1">
-    
+
 <h2>Book detail</h2>
 <table class="table">
 <tbody>
   <tr>
    <td><%= link_to user_path(@book.user.id) do %>
      <% if current_user.profile_image == nil %>
-     <%= image_tag 'no_image.jpeg', size: '40x40' %>
+     <%= image_tag 'no_image.jpg', size: '40x40' %>
      <p><%= @book.user.name %></p>
      <% else %>
        <%= attachment_image_tag @book.user, :profile_image, size: '40x40', class:"attachment user profile_image fallback" %>

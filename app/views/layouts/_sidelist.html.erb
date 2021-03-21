@@ -1,9 +1,9 @@
 <div class="col-md-3">
-  <%= render 'layouts/error_messages', model:@book_new %>
+  <%= render 'layouts/error_messages', model:book %>
 <h2>User info</h2>
   <tbody>
      <% if current_user.profile_image == nil %>
-     <p><%= image_tag 'no_image.jpeg' %></p>
+     <p><%= image_tag 'no_image.jpg' %></p>
      <% else %>
      <p><%= attachment_image_tag current_user, :profile_image,size: '60x60' %></p>
      <% end %>
@@ -28,7 +28,7 @@
        </th>
 
 <h2>New book</h2>
-<%= form_with model: @book_new, url:'/books', local:true do |f| %>
+<%= form_with model: book, url:'/books', local:true do |f| %>
 
 <div class="field">
  <%= f.label :title %><br />
