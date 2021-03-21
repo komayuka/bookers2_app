@@ -1,5 +1,5 @@
 
-<%= render 'layouts/sidelist', book:@book_new %>
+<%= render 'layouts/sidelist', book:@book_new, user:current_user %>
 <div class="col-md-8 offset-md-1">
 <h2>Users</h2>
 <table class="table table-hover">
@@ -25,6 +25,6 @@
    </td>
    <% end %>
   </tr>
-  </div>
+  </div
  </tbody>
  </table>

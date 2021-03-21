@@ -1,5 +1,6 @@
 
-<%= render 'layouts/sidelist', book:@book_new %>
+<%= render 'layouts/sidelist', book:@book_new, user:@book.user %>
+<%= render 'layouts/error_messages', object:@book_new %>
 <div class="col-md-8 offset-md-1">
 <h2>Book detail</h2>
 <table class="table">
