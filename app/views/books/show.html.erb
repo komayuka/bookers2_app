@@ -19,10 +19,16 @@
      <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-success text-light" %></td>
      <td><%= link_to 'Destroy', @book, class: "btn btn-danger text-light", method: :delete, data: {confirm: "本当に削除しますか？"} %></td>
    <% end %>
+   <% if @book.faborited_by?(current_user) %>
+   <p>
+     <%= link_to book_favorites_path(@book), method: :delete do %>
+     ♥<%= @book.favorites.count %>
+     <% end %>
+   </p>
+   <% end %>
   </tr>
   </tbody>
 </table>
-
 
 
 
