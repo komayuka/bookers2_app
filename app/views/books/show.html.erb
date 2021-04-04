@@ -30,8 +30,21 @@
     <%= link_to book_favorites_path(@book), method: :book do %>
      ♡<%= @book.favorites.count %>
      <% end %>
+     <% end %>
    </td>
+   <td>
+       コメント件数: <%= @book.book_comment.count %>
+   </td>
+   <% @book.book_comments.each do |book_comment| %>
+   <%= book_comment.user.name %>
+   <%= book_comment.created_at.strftime %><%= book_comment_comment %>
    <% end %>
+
+   <%= form_with(model:[@book, @book_comment], local: true) do |f| %>
+   <%= f.text_area :comment, row:'5' %>
+   <%= f.submit "送信" %>
+   <% end %>
+
   </tr>
   </tbody>
 </table>
