@@ -22,15 +22,15 @@
       </tr>
       <tr>
        <th>follows</th>
-       <th><%= user.followings.count %></th>
+       <th><%= link_to user.followings.count, 'relationships/followings', user_followings_path %>
+       </th>
       </tr>
       <tr>
        <th>followers</th>
-       <th><%= user.followers.count %></th>
+       <th><%= link_to user.followers.count, 'relationships/followers', user_followers_path %></th>
       </tr>
       </tbody>
       </table>
-
       <tr>
        <div class="row">
        <th><%= link_to edit_user_path(user.id), method: :get do %>
