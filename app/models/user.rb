@@ -25,7 +25,9 @@ class User < ApplicationRecord
 
 
   def follow(user_id)
-    relationships.create(followed_id: user_id.to_i,follower_id: self.id)
+    unless self == user_id
+     self.relationships.find_or_create_by(followed_id: user_id.to_i,follower_id: self.id)
+    end
   end
 
   def unfollow(user_id)
