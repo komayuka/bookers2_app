@@ -12,21 +12,21 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :book_comments, dependent: :destroy
 
-  has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
-  has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
-  has_many :following, through: :active_relationships, source: :followed
-  has_many :followers, through: :passive_relationships, source: :follower
+  has_many :follower, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+  has_many :followed, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
+  has_many :following_user, through: :follower, source: :followed
+  has_many :follower_user, through: :followed, source: :follower
 
   def follow(user_id)
-    relactionships.create(followed_id: user_id)
+    follower.create(followed_id: user_id)
   end
 
   def unfollow(user_id)
-    relactionships.find_by(followed_id: user_id).destroy
+    follower.find_by(followed_id: user_id).destroy
   end
 
   def following?(user)
-    followings.include?(user)
+    following_user.include?(user)
   end
 
 
