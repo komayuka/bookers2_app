@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users do
     resource :relationships, only: [:create, :destroy]
-  post 'followings' =>  'relationships#followings', as: 'followings'
-  post 'followers' => 'relationships#unfollowers', as: 'followers'
+    get 'relationships/followers' => 'relationships#followers', as: 'followers'
+    get 'relationships/followings' => 'relationships#followings', as: 'followings'
   end
   resources :books do
   resources :book_comments, only: [:create, :destroy]

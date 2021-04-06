@@ -1,4 +1,6 @@
 <h2>Follower Users</h2>
+<table class="table table-hover">
+<tbody>
 <% if @users.exists? %>
 <thead>
   <tr>
@@ -14,9 +16,11 @@
     <td>フォロー数: <%= user.followings.count %></td>
     <td>フォロワー数: <%= user.followers.count %></td>
     <td><%= link_to "Show", user %></td>
-  </tr
+  </tr>
   <% end %>
 </tbody>
 <% else %>
- <p>ユーザーはいません</p>
+ <th>ユーザーはいません</th>
  <% end %>
+</tbody>
+</table>
