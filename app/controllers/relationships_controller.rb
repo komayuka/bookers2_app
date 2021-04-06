@@ -10,14 +10,14 @@ def destroy
     redirect_to request.referer
 end
 
-def follow
-    current_user.follow(params[:user_id])
-    redirect_to root_path
+def followings
+    user = User.find(params[:id])
+    @users = user.followings
 end
 
-def unfollow
-    curretn_user.unfollow(params[:user_id])
-    redirect_to root_path
+def followers
+    user = User.find(params[:user_id])
+    @users = user.followers
 end
 
 end
