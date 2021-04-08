@@ -1,0 +1,2 @@
+$("#comments_buttn_<%= @book.id %>").html("<%= j(render partial: 'book_comments/comment', locals: {book:@book, user:current_user}) %>");
+$("textarea").val('')

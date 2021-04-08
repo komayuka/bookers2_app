@@ -31,4 +31,6 @@
   </tbody>
 
 </table>
-<%= render 'book_comments/comment', book:@book, user:current_user %>
+<div id="comments_buttn_<%= @book.id %>">
+<%= render partial: 'book_comments/comment', locals: { book:@book, user:current_user } %>
+</div>
