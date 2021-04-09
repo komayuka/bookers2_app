@@ -27,6 +27,19 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <div class="field">
+    <%= f.label :postcode %><br />
+    <%= f.text_field :postcode, autocomplete: 'postcode', class: 'form-control' %><br />
+    <%= f.label :prefecture_name %><br />
+    <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, { prompt: '選択してください' }, class: 'form-control' %><br />
+    <%= f.label :address_city %><br />
+    <%= f.text_field :address_city, autocomplete: 'address_city', class: 'form-control' %><br />
+    <%= f.label :address_street %><br />
+    <%= f.text_field :address_stree, autocomplete: 'addres_street', class: 'form-control' %><br />
+    <%= f.label :address_building %><br />
+    <%= f.text_field :address_building, autocomplete: 'adddress_building', class: 'form-control' %><br />
+  </div>
+
   <p></p>
   <div class="actions">
     <%= f.submit "Sign up", class: "btn btn-success btn-sm text-light" %>
