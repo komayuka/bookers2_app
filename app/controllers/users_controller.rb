@@ -14,15 +14,7 @@ class UsersController < ApplicationController
     @book_new = Book.new
   end
 
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      NotificationMailer.send_confilm_to_user(@user).deliver_now
-      redirect_to @user
-    else
-      render 'new'
-    end
-  end
+  
 
   def edit
     @user = User.find(params[:id])
