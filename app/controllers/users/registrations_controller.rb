@@ -12,7 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-      NotificationMailer.send_confilm_to_user(@user).deliver_now
+      NotificationMailer.with(user: @user).send_confilm_to_user.deliver_later
   end
 
   # GET /resource/edit
