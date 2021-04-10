@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get 'home/about' => 'homes#about'
   get 'search' => 'searchs#search'
-  devise_for :users
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations',
+  }
   resources :users do
     resource :relationships, only: [:create, :destroy]
     get 'relationships/followers' => 'relationships#followers', as: 'followers'

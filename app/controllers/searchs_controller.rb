@@ -13,7 +13,7 @@ class SearchsController < ApplicationController
     if method == "forward_match"
       User.where("name LIKE?", "#{content}%")
     elsif method == "backward_match"
-      User.where("name LIKE?", "#{content}%")
+      User.where("name LIKE?", "%#{content}")
     elsif method == "perfect_match"
       User.where("#{content}")
     elsif method == "partial_match"
