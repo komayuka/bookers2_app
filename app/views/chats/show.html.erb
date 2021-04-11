@@ -1,0 +1,31 @@
+<table>
+  <tbody>
+<div id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>">
+  <tr>
+  <th><%= @user.name %> さんとのチャット</th>
+  </tr>
+  <tr>
+<% @chats.each do |chat| %>
+<th><% if chat.user_id == @current_user.id %></th>
+ </tr>
+ <tr>
+    <th><%= chat.message %></th>
+    <th></th>
+ </tr>
+
+<% else %>
+<tbody>
+  <tr>
+    <th><%= chat.message %></th>
+  </tr>
+</tbody>
+</tbody>
+<% end %>
+<% end %>
+</table>
+<%= form_with model: @chat do |f| %>
+  <%= f.text_field :message %>
+  <%= f.hidden_field :room_id %>
+<% end %>
+
+</div>

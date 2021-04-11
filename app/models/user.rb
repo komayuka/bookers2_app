@@ -21,7 +21,9 @@ class User < ApplicationRecord
   has_many :passive_relationships,class_name: "Relationship",foreign_key: "followed_id",dependent: :destroy
   has_many :followings, through: :relationships,source: :followed
   has_many :followers, through: :passive_relationships,source: :follower
-
+  has_many :user_rooms
+  has_many :chats
+  has_many :rooms, through: :user_rooms
 
 
   def follow(user_id)
