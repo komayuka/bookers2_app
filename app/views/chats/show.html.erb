@@ -1,23 +1,18 @@
 <table>
 <div id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>">
   <%= @user.name %> さんとのチャット
-</div>
 
-<thead>
-  <tr>
-    <th><%= current_user.name %></th>
-    <th><%= @user.name %></th>
-  </tr>
-</thead>
+
+
 
 <% @chats.each do |chat| %>
-<% if chat.user_is == cureent_user.id %>
+<% if chat.user_id == @current_user.id %>
 <tbody>
   <tr>
     <th><%= chat.message %></th>
     <th></th>
   </tr>
-</tbody>
+
 <% else %>
 <tbody>
   <tr>
@@ -25,10 +20,12 @@
   </tr>
 </tbody>
 <% end %>
+<% end %>
 </table>
-
+</tbody>
 <%= form_with model: @chat do |f| %>
   <%= f.text_field :message %>
   <%= f.hidden_field :room_id %>
 <% end %>
-<% end %>
+
+</div>
